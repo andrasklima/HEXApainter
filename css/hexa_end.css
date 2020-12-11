@@ -1,0 +1,70 @@
+#end_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#end_container span {
+  font-size: 5vh;
+  font-family: 'Russo One', sans-serif;
+  text-align: center;
+  width: 100%;
+}
+
+#end_container .done_uplift, #end_container #done_gratulations, #end_container #points, #end_container #start_new_game_btn {
+  transform: translateY(-3vh);
+}
+
+#end_container #done_container {
+  min-width: 300px;
+  height: 45vh;
+  width: 50vw;
+  padding-bottom: 3vh;
+  transform: translateY(-5vh);
+}
+
+#end_container #done_gratulations {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: green;
+  width: 50vw;
+  height: 12vh;
+}
+
+#end_container #points {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1vh;
+}
+
+#end_container #points .point_up_down {
+  font-size: 4vh;
+}
+
+#end_container #start_new_game_btn {
+  display: flex;
+  margin-top: vh;
+  background-color: royalblue;
+  justify-content: center;
+}
+
+#end_container #start_new_game_btn span {
+  font-size: 5vh;
+  font-family: 'Russo One', sans-serif;
+  text-align: center;
+  background-color: royalblue;
+  width: 25%;
+}
+
+#end_container #king {
+  transform: scale(0.5);
+}
+
+#end_container #win {
+  transform: scale(0.5);
+}
+
+button {
+  height: 1.5rem;
+}

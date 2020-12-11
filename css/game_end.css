@@ -1,0 +1,150 @@
+#end_container {
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  visibility: hidden;
+  z-index: 999;
+}
+
+#end_container.show {
+  visibility: visible !important;
+}
+
+#end_container span {
+  font-size: 5vh;
+  font-family: "Russo One", sans-serif;
+  text-align: center;
+  width: 100%;
+}
+
+#end_container .done_uplift, #end_container #win_gratulations, #end_container #done_gratulations, #end_container #king_gratulations, #end_container #points, #end_container #start_new_game_btn {
+  transform: translateY(-3vh);
+}
+
+#end_container #done_container {
+  min-width: 300px;
+  min-height: 45vh;
+  width: 50vw;
+  transform: translateY(5vh);
+}
+
+#end_container #win_container {
+  min-width: 300px;
+  min-height: 45vh;
+  width: 45vw;
+}
+
+#end_container #win_container #win {
+  transform: translateY(6vh);
+}
+
+#end_container #king_container {
+  min-width: 300px;
+  min-height: 38vh;
+  width: 40vw;
+  margin-bottom: 5vh;
+}
+
+#end_container #win_gratulations {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: green;
+  width: 70vw;
+}
+
+#end_container #done_gratulations {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: green;
+  width: 70vw;
+}
+
+#end_container #king_gratulations {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: green;
+  width: 50vw;
+}
+
+#end_container #points {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1vh;
+}
+
+#end_container #points .point_up_down {
+  font-size: 4vh;
+}
+
+#end_container #start_new_game_btn {
+  display: flex;
+  margin-top: vh;
+  background-color: royalblue;
+  justify-content: center;
+}
+
+#end_container #start_new_game_btn span {
+  font-size: 5vh;
+  font-family: "Russo One", sans-serif;
+  text-align: center;
+  background-color: royalblue;
+  width: 25%;
+}
+
+#end_container #win {
+  transform: translateY(-10vh);
+}
+
+#end_container .end_button_replace {
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  background: linear-gradient(90deg, #300132 3%, #98099d 11%, #e14609 23%, #e4e913 66%, red 86%, #280101 98%);
+  clip-path: polygon(7% 3%, 93% 3%, 100% 50%, 93% 97%, 7% 97%, 0% 50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-size: 3vh;
+  text-transform: uppercase;
+  font-family: "Exo 2", sans-serif;
+  margin-bottom: 2vh;
+  cursor: pointer;
+}
+
+#end_container .highscore_background {
+  margin-top: -0.5vh;
+  margin-bottom: -0.5vh;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px;
+  background-color: darkgrey;
+  clip-path: polygon(12% 3%, 88% 3%, 100% 50%, 88% 97%, 12% 97%, 0% 50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-size: 3vh;
+  text-transform: uppercase;
+  font-family: "Exo 2", sans-serif;
+  transform: translateY(-2vh);
+}
+
+#end_container .highscore_background span:last-child {
+  margin-top: 0.2rem;
+  font-family: "Russo One", sans-serif;
+}
+
+/* 
+
+//temp cuccok
+button{
+	height: 1.5rem;
+}
+
+ */

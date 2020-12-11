@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>HEXA painter</title>
+
+    <meta charset="UTF-8" />
+
+    <!-- http://proger.i-forge.net/The_smallest_transparent_pixel/ -->
+    <link rel="icon" href="data:image/gif;base64,R0lGODlhAQABAAAAACwAAAAAAQABAAA=" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Finger+Paint&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Exo+2:wght@500&display=swap"
+      rel="stylesheet"
+    />
+
+    <link href="./css/game_end.css" rel="stylesheet" />
+    <link href="./css/style.css" rel="stylesheet" />
+
+    <script src="https://unpkg.com/kvdb.io@v1.0"></script>
+    <script src="./game_end.js"></script>
+    <script src="./game.js"></script>
+    <script src="./game_start.js"></script>
+  </head>
+
+  <body>
+    <div id="page"></div>
+
+    <div id="devButtons">
+      <button onclick="startGame()">Start new game</button>
+      <button onclick="startLevel()">Start new level</button>
+      <button onclick="randomBackground()">Change background</button>
+      <button id="done_button">Done</button>
+      <button id="win_button">Win</button>
+      <button id="king_button">King</button>
+      <button onclick="setHighScore()">High Score</button>
+      <button onclick="showScoreboard()">Scoreboard</button>
+      <button onclick="hideDevButtons()">Hide buttons</button>
+    </div>
+
+    <div id="scoreboard">
+      <div>Overall score:<span id="overallScore"></span></div>
+      <div>Level: <span id="level"></span></div>
+      <div>Level score:<span id="levelScore"></span></div>
+
+      <div>Remaining hexagons:<span id="remainingHexagons"></span></div>
+    </div>
+
+    <div id="wrapper">
+      <!-- initGame hozza létre -->
+      <!-- <div id="gameboard" class="gameboard"></div> -->
+    </div>
+
+    <div id="countdown">
+      <div id="countdown_3_id" class="countdownDigit">3</div>
+
+      <div id="countdown_2_id" class="countdownDigit">2</div>
+      <div id="countdown_1_id" class="countdownDigit">1</div>
+    </div>
+
+    <div id="side_name">
+      <span>H</span>
+      <span>E</span>
+      <span>X</span>
+      <span>A</span>
+      <span>&nbsp;</span>
+      <span>p</span>
+      <span>a</span>
+      <span>i</span>
+      <span>n</span>
+      <span>t</span>
+      <span>e</span>
+      <span>r</span>
+    </div>
+
+    <div id="end_container"></div>
+  </body>
+</html>
