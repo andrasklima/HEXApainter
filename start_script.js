@@ -17,6 +17,9 @@ function highscoreHighlight() {
     "lime",
     "dodgerblue",
   ];
+
+  colors_of_tops.sort(() => Math.random() - 0.5);
+
   // let timer_over = 0;
 
   for (let color_index = 0; color_index < colors_of_tops.length; color_index++) {
