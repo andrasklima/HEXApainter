@@ -78,12 +78,15 @@ function loadHighScores() {
 
       topScoreRank++;
       
+      if (topScoreRank > res.length) {
+        topScorersPage = 1;
+        
+        break;
+      }
+      
       if (topScoreRank > topScorers * topScorersPage) {
-        if (topScoreRank > res.length) {
-          topScorersPage = 1;
-        } else {
-          topScorersPage++;
-        }
+        topScorersPage++;
+      
         break;
       }
     }
