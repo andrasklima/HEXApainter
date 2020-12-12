@@ -194,6 +194,11 @@ body {
   clip-path: polygon(0% 0, 60% 0%, 95% 50%, 60% 100%, 0% 100%, 0% 50%);
   font-family: "Exo 2", sans-serif;
 }
+
+#records #inner_records {
+  width: 20vw;
+}
+
 #records .score_header,
 #records .score_text {
   display: grid;

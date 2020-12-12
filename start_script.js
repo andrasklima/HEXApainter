@@ -1,3 +1,6 @@
+const topScorers = 10;
+let topScorersPage = 1;
+
 function highscoreHighlight() {
   let top_names = document.querySelectorAll("#inner_records .score_text");
 
@@ -40,12 +43,17 @@ function loadHighScores() {
   const bucket = KVdb.bucket("WaEBipgTvS1Hyv4ecnYRrK");
 
   const run = async () => {
-    let topScorers = 10;
+    let topScoreRank = 1;
     let topscore = document.querySelector("#inner_records");
+
+    scoreTexts = document.querySelectorAll("#inner_records .score_text");
+    for (let index = 0; index < scoreTexts.length; index++) {
+      scoreTexts[index].outerHTML = "";
+    }
 
     // list key-values by prefix (returns an array of [key, value] tuples)
     res = await bucket.list({ prefix: "username", values: true });
-
+      
     res.sort(function (a, b) {
       return b[1] - a[1];
     });
@@ -58,18 +66,26 @@ function loadHighScores() {
        	  <span class="topscore_name">${name}</span> <span class="topscore_score"> ${value}</span>
         </div>`;
 
-      topscore.insertAdjacentHTML("beforeend", nameHTML);
+      if (
+        topScoreRank > topScorers * (topScorersPage - 1) &&
+        topScoreRank <= topScorers * topScorersPage
+      ) {
+        topscore.insertAdjacentHTML("beforeend", nameHTML);
+      }
 
-      topScorers--;
-
-      if (topScorers === 0) {
+      topScoreRank++;
+      
+      if (topScoreRank > topScorers * topScorersPage) {
+        if (topScoreRank > res.length) {
+          topScorersPage = 1;
+        } else {
+          topScorersPage++;
+        }
         break;
       }
     }
 
-    setInterval(function () {
-      highscoreHighlight();
-    }, 6000);
+    highscoreHighlight();
   };
 
   run();
@@ -94,6 +110,10 @@ function load_starter() {
   //enter.addEventListener("click",  open_game );
 
   loadHighScores();
+
+  setInterval(function () {
+    loadHighScores();
+  }, 6000);
 } // end
 
 window.addEventListener("load", load_starter);
