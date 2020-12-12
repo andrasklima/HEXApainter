@@ -46,17 +46,17 @@ function loadHighScores() {
     let topScoreRank = 1;
     let topscore = document.querySelector("#inner_records");
 
-    scoreTexts = document.querySelectorAll("#inner_records .score_text");
-    for (let index = 0; index < scoreTexts.length; index++) {
-      scoreTexts[index].outerHTML = "";
-    }
-
     // list key-values by prefix (returns an array of [key, value] tuples)
     res = await bucket.list({ prefix: "username", values: true });
       
     res.sort(function (a, b) {
       return b[1] - a[1];
     });
+
+    scoreTexts = document.querySelectorAll("#inner_records .score_text");
+    for (let index = 0; index < scoreTexts.length; index++) {
+      scoreTexts[index].outerHTML = "";
+    }
 
     for (const [key, value] of res) {
       let name = key.replace("username:", "");
