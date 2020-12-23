@@ -88,6 +88,7 @@ body {
   transform: scale(0.5) translate(100%, 50%) rotate(-45deg);
   border: 25px solid rgba(28, 28, 28, 0.75);
   border-radius: 50px;
+  box-sizing: content-box;
 }
 
 .gameboard {
