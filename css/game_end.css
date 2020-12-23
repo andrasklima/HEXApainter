@@ -143,6 +143,7 @@
 #save_btn {
   transform: rotate(-45deg) scale(0.5) translate(70vw, 50vh);
   width: 25% !important;
+  display: none !important;
 }
 
 /* 
