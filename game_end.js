@@ -118,17 +118,23 @@ function click_win(e, level, score, completed) {
     <div id="finish_btn" class="end_button_replace">
 		  <span>Back to Home</span>
 	  </div>
+
+    <div id="save_btn" class="end_button_replace">
+		  <span>Save your painting</span>
+    </div>    
 	`;
   container.insertAdjacentHTML("beforeend", win_html2);
 
   if (highscore_html !== "") {
-    document.querySelector("#usernameInputBtn").addEventListener("click", function () {
-      username = document.querySelector("#usernameInput").value;
-      // console.log(username, score);
-      setHighScore();
+    document
+      .querySelector("#usernameInputBtn")
+      .addEventListener("click", function () {
+        username = document.querySelector("#usernameInput").value;
+        // console.log(username, score);
+        setHighScore();
 
-      document.querySelector("#highscore_btn").innerHTML = "<span>SAVED</span>";
-    });
+        document.querySelector("#highscore_btn").innerHTML = "<span>SAVED</span>";
+      });
   }
 
   let finish_button = document.querySelector("#end_container #finish_btn");
@@ -140,6 +146,14 @@ function click_win(e, level, score, completed) {
 
     window.open("./index.html", "_self");
   });
+
+  let save_button = document.querySelector("#end_container #save_btn");
+
+  save_button.addEventListener("click", function () {
+    let wrapperDiv = document.querySelector(".game-completed");
+
+    printDiv(wrapperDiv);
+  }); // kattintásra elmenti az "összekattintott képet"
 }
 
 function click_done(e, level, score) {
@@ -263,6 +277,24 @@ function click_king(e, level, score) {
 
     window.open("./index.html", "_self");
   });
+}
+
+function printDiv(div) {
+  html2canvas(div, {
+    onrendered: function (canvas) {
+      var myImage = canvas.toDataURL();
+      downloadURI(myImage, "HEXApainter.png");
+    },
+  });
+}
+
+function downloadURI(uri, name) {
+  var link = document.createElement("a");
+
+  link.download = name;
+  link.href = uri;
+  document.body.insertAdjacentElement("beforeend", link);
+  link.click();
 }
 
 function load_starter() {

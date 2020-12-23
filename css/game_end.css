@@ -140,6 +140,12 @@
   font-family: "Russo One", sans-serif;
 }
 
+#save_btn {
+  transform: rotate(-45deg) scale(0.5) translate(50vw, 75vh);
+  width: auto !important;
+  padding: 0 5%;
+}
+
 /* 
 
 //temp cuccok
