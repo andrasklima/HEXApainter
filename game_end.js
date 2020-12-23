@@ -280,11 +280,9 @@ function click_king(e, level, score) {
 }
 
 function printDiv(div) {
-  html2canvas(div, {
-    onrendered: function (canvas) {
-      var myImage = canvas.toDataURL();
-      downloadURI(myImage, "HEXApainter.png");
-    },
+  html2canvas(div).then((canvas) => {
+    var myImage = canvas.toDataURL();
+    downloadURI(myImage, "HEXApainter.png");
   });
 }
 
