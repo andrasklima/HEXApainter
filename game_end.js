@@ -281,6 +281,7 @@ function click_king(e, level, score) {
 
 function printDiv(div) {
   html2canvas(div, {
+    allowTaint: true,
     onrendered: function (canvas) {
       var myImage = canvas.toDataURL();
       downloadURI(myImage, "HEXApainter.png");
