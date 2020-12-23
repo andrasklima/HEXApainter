@@ -384,6 +384,7 @@ function createHexagons(divId, colorize) { // paraméterzés a háttér automati
 
     svg.style.rotate = `${turnDegree}deg`;   // véletlen elforgatás chrome-on nem megy
     svg.style.scale = `${randomScale}`;   // véletlen méret
+    svg.style.transform = `${randomScale} ${turnDegree}deg`;
 
     switch (getRandomInRange(1, 3, 0)) {
       case 1:
